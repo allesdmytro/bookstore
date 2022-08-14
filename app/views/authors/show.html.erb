@@ -1,0 +1,11 @@
+<h1><%= @author.name %> </h1>
+<br>
+<%= link_to 'Edit author', edit_author_path(@author) %><br>
+<%= link_to "Destroy", 
+  author_path(@author), 
+  data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+  } 
+%><br>
+<%= link_to 'Back to main page', root_path %>
