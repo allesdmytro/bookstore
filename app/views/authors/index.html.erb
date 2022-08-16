@@ -1,11 +1,11 @@
-<h1>Authors</h1>
-
-<%= link_to 'Create new author', new_author_path %>
-
-<ul>
+<article class="panel is-primary">
+  <p class="panel-heading">
+    Authors <%= link_to 'Create new author', new_author_path, class: 'button is-info' %>
+  </p>
+  <p class="panel-tabs">
+  
+  </p>
   <% @authors.each do |author| %>
-    <li>
-      <%= link_to author.name, author %>
-    </li>
+    <%= link_to author.name, author, class: 'panel-block' %>
   <% end %>
-</ul>
+</article>

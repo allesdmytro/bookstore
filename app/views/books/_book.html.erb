@@ -1,10 +1,13 @@
-<p> <%= book.title %> </p>
-<br>
-<p> <%= book.description %> </p>
-<br>
-<p>
-  <%= link_to "Delete book", [book.author, book], data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %>
+<% if book.id %>
+<p class="panel-block">
+    <p> Title: <%= book.title %> </p> <br>
+    <p> Description: <%= book.description %> </p>
+    <p>
+    <%= link_to "Delete book", [book.author, book], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        },
+        class: 'button is-danger' %>
+    </p>
 </p>
+<% end %>

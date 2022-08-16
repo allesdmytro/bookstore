@@ -1,17 +1,30 @@
-<h1><%= @author.name %> </h1>
-<br>
-<%= link_to 'Edit author', edit_author_path(@author) %><br>
-<%= link_to "Destroy", 
-  author_path(@author), 
-  data: {
-  turbo_method: :delete,
-  turbo_confirm: "Are you sure?"
-  } 
-%><br>
-<%= link_to 'Back to main page', root_path %>
-
-<h2>Add a book:</h2>
-<%= render 'books/form' %>
-
-<h2> list of Books: </h2>
-<%= render @author.books %>
+<article class="panel is-warning">
+  <p class="panel-heading">
+    <%= @author.name %>
+    <%= link_to 'Edit author', edit_author_path(@author), class: 'button is-info' %>
+    <%= link_to "Destroy", 
+      author_path(@author), 
+      data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?",
+      },
+      class: 'button is-danger' 
+    %>
+  </p>
+</article>
+<article class="panel is-info">
+  <p class="panel-heading">
+    Add a book:
+  </p>
+  <p class="panel-block">
+    <%= render 'books/form' %>
+  </p>
+</article>
+<article class="panel is-link">
+  <p class="panel-heading">
+    List of books:
+  </p>
+  <p class="panel-block"
+  <%= render @author.books %>
+  </p>
+</article>
