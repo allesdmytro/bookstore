@@ -9,3 +9,9 @@
   } 
 %><br>
 <%= link_to 'Back to main page', root_path %>
+
+<h2>Add a book:</h2>
+<%= render 'books/form' %>
+
+<h2> list of Books: </h2>
+<%= render @author.books %>
